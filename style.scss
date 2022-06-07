@@ -1,10 +1,13 @@
 body {
 	background: rgb(155, 154, 154);
+	display: flex;
+	flex-direction: column;
+
 }
 //INDEX
 $border-rad: 2rem;
-$clr-btn: #15DEA5;
-$clr-primary: #15DEA5;
+$clr-btn: #a915de;
+$clr-primary: #8a15de;
 @mixin element {
     content: "";
     position: absolute;
@@ -14,10 +17,123 @@ $clr-primary: #15DEA5;
     left: 0;
 }
 
-.page_sabre{
-	display: flex;
+a{
+	text-decoration: none;
+    color: black;
+	cursor: pointer;
+}
+
+
+$cd-navy: #5b0e7f;
+$cd-mint: #de15b3;
+
+@mixin menu__open-accent($dur, $delay) {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #636363;
+    transform-origin: top left;
+    animation: menu $dur $delay both;
+    z-index: -1;
+}
+
+.body_index{
 	align-items: center;
-	justify-content: center;
+}
+.container_index{
+	width: 95%;
+	max-width: 1500px;
+
+}
+
+.menu {
+	font-family: 'Montserrat', sans-serif;
+	font-style: italic;
+	font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    background:$cd-mint;
+    overflow: hidden;
+    transform-origin: top left;
+    position: relative;
+    animation: menu 661ms both;
+    &__open-accent--1{
+        @include menu__open-accent(450ms, 275ms);
+    }
+    &__open-accent--2 {
+            @include menu__open-accent(450ms, 150ms);
+            background: $cd-navy;
+            z-index: -2;
+    }
+    &__item {
+        padding: .75rem;
+        margin: .25rem;
+        background: #fff;
+        animation: menu__item 810ms cubic-bezier(.1,.9,.1,1) both;
+        position: relative;
+		cursor: pointer;
+        &-accent {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: .25rem;
+            background-color: $cd-mint;
+            animation: menu__accent 400ms both;
+            &--active {
+                background-color: $cd-navy
+            }
+        }
+        &--1 {
+            animation-delay: 475ms;
+            > div {
+                animation-delay: 712ms;
+            }
+        }
+        &--2 {
+            animation-delay: 546ms;
+            > div {
+                animation-delay: 805ms;
+            }
+        }
+        &--3 {
+            animation-delay: 632ms;
+            > div {
+                animation-delay: 914ms;
+            }
+        }
+    }
+}
+
+
+@keyframes menu {
+    0% {
+        transform: scale(0,.07);
+    }
+    33% {
+        transform: scale(1,.07);
+        animation-timing-function: cubic-bezier(.73,.01,.2,.99)
+    }
+
+}
+
+
+@keyframes menu__item {
+    0% {
+        transform: translateX(-110%);
+    }
+}
+
+@keyframes menu__accent {
+    0% {
+        transform: scaleY(0);
+    }
 }
 
 .btn {
@@ -25,11 +141,14 @@ $clr-primary: #15DEA5;
 	font-weight: bold;
 	color: white;
 	font-family: 'Montserrat', sans-serif;
-	padding: 10px 20px 10px 20px;
+	width: 200px;
+	height: 50px;
     border-radius: $border-rad;
     background-color: $clr-btn;
     position: relative;
     z-index: 1;
+	margin: 5px;
+	cursor:pointer;
     &:hover {
         &::after {
             opacity: 1;
@@ -45,9 +164,25 @@ $clr-primary: #15DEA5;
     }
 }
 
+.sommaire{
+	background-color: #5252524f;
+	border-radius: 5%;
+	height: 400px;
+	width: 95%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.exercices_titre{
+	display: flex;
+	justify-content: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+}
+
 //BARRES ///////////////////////////////////////////
 .body_barres {
-	
     box-sizing: border-box;
     background: #fff;
     font-size: 1.5rem;
@@ -126,8 +261,7 @@ $cd-bars-inv: #0E397F;
 //SABRE LASER ///////////////////////////////////////
 .lightsaber-example {
 	display: flex;
-    justify-content: center;
-    justify-content: space-around;
+	justify-content: space-around ; 
 	padding-top: 325px;
 }
 

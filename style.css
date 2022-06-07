@@ -1,23 +1,136 @@
 body {
   background: rgb(155, 154, 154);
-}
-
-.page_sabre {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.body_index {
+  align-items: center;
+}
+
+.container_index {
+  width: 95%;
+  max-width: 1500px;
+}
+
+.menu {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #de15b3;
+  overflow: hidden;
+  transform-origin: top left;
+  position: relative;
+  animation: menu 661ms both;
+}
+.menu__open-accent--1 {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #636363;
+  transform-origin: top left;
+  animation: menu 450ms 275ms both;
+  z-index: -1;
+}
+.menu__open-accent--2 {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #636363;
+  transform-origin: top left;
+  animation: menu 450ms 150ms both;
+  z-index: -1;
+  background: #5b0e7f;
+  z-index: -2;
+}
+.menu__item {
+  padding: 0.75rem;
+  margin: 0.25rem;
+  background: #fff;
+  animation: menu__item 810ms cubic-bezier(0.1, 0.9, 0.1, 1) both;
+  position: relative;
+  cursor: pointer;
+}
+.menu__item-accent {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0.25rem;
+  background-color: #de15b3;
+  animation: menu__accent 400ms both;
+}
+.menu__item-accent--active {
+  background-color: #5b0e7f;
+}
+.menu__item--1 {
+  animation-delay: 475ms;
+}
+.menu__item--1 > div {
+  animation-delay: 712ms;
+}
+.menu__item--2 {
+  animation-delay: 546ms;
+}
+.menu__item--2 > div {
+  animation-delay: 805ms;
+}
+.menu__item--3 {
+  animation-delay: 632ms;
+}
+.menu__item--3 > div {
+  animation-delay: 914ms;
+}
+
+@keyframes menu {
+  0% {
+    transform: scale(0, 0.07);
+  }
+  33% {
+    transform: scale(1, 0.07);
+    animation-timing-function: cubic-bezier(0.73, 0.01, 0.2, 0.99);
+  }
+}
+@keyframes menu__item {
+  0% {
+    transform: translateX(-110%);
+  }
+}
+@keyframes menu__accent {
+  0% {
+    transform: scaleY(0);
+  }
+}
 .btn {
   font-style: italic;
   font-weight: bold;
   color: white;
   font-family: "Montserrat", sans-serif;
-  padding: 10px 20px 10px 20px;
+  width: 200px;
+  height: 50px;
   border-radius: 2rem;
-  background-color: #15DEA5;
+  background-color: #a915de;
   position: relative;
   z-index: 1;
+  margin: 5px;
+  cursor: pointer;
 }
 .btn:hover::after {
   opacity: 1;
@@ -29,11 +142,29 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: radial-gradient(circle, #22eab1 0%, #11af82 100%);
+  background: radial-gradient(circle, #b522ea 0%, #8611af 100%);
   border-radius: 2rem;
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
+}
+
+.sommaire {
+  background-color: rgba(82, 82, 82, 0.3098039216);
+  border-radius: 5%;
+  height: 400px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.exercices_titre {
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }
 
 .body_barres {
@@ -73,7 +204,7 @@ body {
   animation-delay: 200ms;
 }
 .load__bar--1-inv {
-  animation-delay: 305ms;
+  animation-delay: 545ms;
   animation-direction: alternate-reverse;
   background: #0E397F;
 }
@@ -84,7 +215,7 @@ body {
   animation-delay: 400ms;
 }
 .load__bar--2-inv {
-  animation-delay: 1465ms;
+  animation-delay: 805ms;
   animation-direction: alternate-reverse;
   background: #0E397F;
 }
@@ -95,7 +226,7 @@ body {
   animation-delay: 600ms;
 }
 .load__bar--3-inv {
-  animation-delay: 1020ms;
+  animation-delay: 1095ms;
   animation-direction: alternate-reverse;
   background: #0E397F;
 }
@@ -106,7 +237,7 @@ body {
   animation-delay: 800ms;
 }
 .load__bar--4-inv {
-  animation-delay: 1235ms;
+  animation-delay: 1700ms;
   animation-direction: alternate-reverse;
   background: #0E397F;
 }
@@ -117,7 +248,7 @@ body {
   animation-delay: 1000ms;
 }
 .load__bar--5-inv {
-  animation-delay: 1735ms;
+  animation-delay: 1030ms;
   animation-direction: alternate-reverse;
   background: #0E397F;
 }
@@ -127,7 +258,7 @@ body {
 .load__bar--6 {
   animation-direction: alternate-reverse;
   background: rgb(26, 108, 214);
-  animation-delay: 1580ms;
+  animation-delay: 760ms;
 }
 .load__bar--6:hover {
   animation-play-state: paused;
@@ -135,7 +266,7 @@ body {
 .load__bar--7 {
   animation-direction: alternate-reverse;
   background: rgb(26, 108, 214);
-  animation-delay: 1980ms;
+  animation-delay: 2220ms;
 }
 .load__bar--7:hover {
   animation-play-state: paused;
@@ -143,7 +274,7 @@ body {
 .load__bar--8 {
   animation-direction: alternate-reverse;
   background: rgb(26, 108, 214);
-  animation-delay: 1280ms;
+  animation-delay: 2560ms;
 }
 .load__bar--8:hover {
   animation-play-state: paused;
@@ -151,7 +282,7 @@ body {
 .load__bar--9 {
   animation-direction: alternate-reverse;
   background: rgb(26, 108, 214);
-  animation-delay: 1180ms;
+  animation-delay: 2180ms;
 }
 .load__bar--9:hover {
   animation-play-state: paused;
@@ -159,7 +290,7 @@ body {
 .load__bar--10 {
   animation-direction: alternate-reverse;
   background: rgb(26, 108, 214);
-  animation-delay: 1580ms;
+  animation-delay: 1380ms;
 }
 .load__bar--10:hover {
   animation-play-state: paused;
@@ -175,7 +306,6 @@ body {
 }
 .lightsaber-example {
   display: flex;
-  justify-content: center;
   justify-content: space-around;
   padding-top: 325px;
 }
