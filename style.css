@@ -2,6 +2,177 @@ body {
   background: rgb(155, 154, 154);
 }
 
+.page_sabre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 20px 10px 20px;
+  border-radius: 2rem;
+  background-color: #15DEA5;
+  position: relative;
+  z-index: 1;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle, #22eab1 0%, #11af82 100%);
+  border-radius: 2rem;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+
+.body_barres {
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 1.5rem;
+  height: 100%;
+  font-family: "arial", sans-serif;
+  height: 100%;
+}
+
+.container_barres {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container_barres span {
+  margin: 1rem;
+}
+
+.load {
+  width: 30vh;
+  height: 22.5vh;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+}
+.load__bar {
+  background-color: #c715de;
+  height: 100%;
+  width: 3vh;
+  animation: bars 1000ms backwards infinite alternate ease-in-out;
+}
+.load__bar--1 {
+  animation-delay: 200ms;
+}
+.load__bar--1-inv {
+  animation-delay: 305ms;
+  animation-direction: alternate-reverse;
+  background: #0E397F;
+}
+.load__bar--1-inv:hover {
+  animation-play-state: paused;
+}
+.load__bar--2 {
+  animation-delay: 400ms;
+}
+.load__bar--2-inv {
+  animation-delay: 1465ms;
+  animation-direction: alternate-reverse;
+  background: #0E397F;
+}
+.load__bar--2-inv:hover {
+  animation-play-state: paused;
+}
+.load__bar--3 {
+  animation-delay: 600ms;
+}
+.load__bar--3-inv {
+  animation-delay: 1020ms;
+  animation-direction: alternate-reverse;
+  background: #0E397F;
+}
+.load__bar--3-inv:hover {
+  animation-play-state: paused;
+}
+.load__bar--4 {
+  animation-delay: 800ms;
+}
+.load__bar--4-inv {
+  animation-delay: 1235ms;
+  animation-direction: alternate-reverse;
+  background: #0E397F;
+}
+.load__bar--4-inv:hover {
+  animation-play-state: paused;
+}
+.load__bar--5 {
+  animation-delay: 1000ms;
+}
+.load__bar--5-inv {
+  animation-delay: 1735ms;
+  animation-direction: alternate-reverse;
+  background: #0E397F;
+}
+.load__bar--5-inv:hover {
+  animation-play-state: paused;
+}
+.load__bar--6 {
+  animation-direction: alternate-reverse;
+  background: rgb(26, 108, 214);
+  animation-delay: 1580ms;
+}
+.load__bar--6:hover {
+  animation-play-state: paused;
+}
+.load__bar--7 {
+  animation-direction: alternate-reverse;
+  background: rgb(26, 108, 214);
+  animation-delay: 1980ms;
+}
+.load__bar--7:hover {
+  animation-play-state: paused;
+}
+.load__bar--8 {
+  animation-direction: alternate-reverse;
+  background: rgb(26, 108, 214);
+  animation-delay: 1280ms;
+}
+.load__bar--8:hover {
+  animation-play-state: paused;
+}
+.load__bar--9 {
+  animation-direction: alternate-reverse;
+  background: rgb(26, 108, 214);
+  animation-delay: 1180ms;
+}
+.load__bar--9:hover {
+  animation-play-state: paused;
+}
+.load__bar--10 {
+  animation-direction: alternate-reverse;
+  background: rgb(26, 108, 214);
+  animation-delay: 1580ms;
+}
+.load__bar--10:hover {
+  animation-play-state: paused;
+}
+
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 .lightsaber-example {
   display: flex;
   justify-content: center;
